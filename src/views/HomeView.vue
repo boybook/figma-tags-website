@@ -1,55 +1,67 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-white to-blue-50">
     <!-- Header -->
-    <header class="container mx-auto pt-20 pb-16 text-center">
+    <header class="container mx-auto pt-20 pb-16 text-center px-4">
       <div class="flex flex-col items-center justify-center gap-3 mb-4">
-        <h1 class="font-extrabold text-8xl text-blue-600">Figma Tags</h1>
-        <a href="https://github.com/boybook/figma-tags" 
-           target="_blank"
-           class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer">
+        <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600">Figma Tags</h1>
+        <a 
+          href="https://github.com/boybook/figma-tags" 
+          target="_blank"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer"
+        >
           <i class="fab fa-github"></i> Open Source
         </a>
       </div>
-      <p class="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-        The ultimate tagging system for organizing your Figma files and Frames across documents
+      <p class="text-base md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+        The ultimate tagging system for organizing your Figma Files and Frames across documents
       </p>
+      <a 
+        href="https://www.figma.com/community/plugin/1097223080479352701/figma-tags"
+        target="_blank"
+        class="inline-block bg-white hover:bg-gray-100 text-blue-600 border-2 border-blue-600 font-bold px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl mt-8 transition-colors duration-300"
+      >
+        Try it out now
+      </a>
     </header>
 
     <!-- Hero Section -->
-    <section class="container mx-auto mb-32">
+    <section class="container mx-auto mb-16 md:mb-32 px-4">
       <img src="@/assets/hero.png" alt="Figma Tags Interface" class="w-full rounded-2xl"/>
     </section>
 
     <!-- Features -->
-    <section class="container mx-auto mb-32">
+    <section class="container mx-auto mb-16 md:mb-32 px-4">
       <div class="flex flex-col items-center justify-center mb-4">
-        <h2 class="text-6xl font-black text-center mb-8 text-gray-800">How does it help?</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-16 text-center">
-          Figma Tags is a powerful tool that helps you manage your Figma files and frames across documents. It allows you to tag frames with custom tags, and then use these tags to filter and search for frames across documents.
+        <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800">How does it help?</h2>
+        <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 md:mb-16 text-center">
+          It allows you to tag frames with custom tags, and then use these tags to filter and search for frames across documents.
         </p>
       </div>
 
-      <div v-for="(feature, index) in features" :key="index" 
-           class="flex items-center gap-16 mb-24" 
-           :class="index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'">
-        <div class="flex-[3]">
+      <div 
+        v-for="(feature, index) in features" 
+        :key="index" 
+        class="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-16 md:mb-24 px-4 md:px-0"
+        :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
+      >
+        <div class="flex-[4] w-full">
           <img :src="feature.image" :alt="feature.title" class="rounded-2xl w-full"/>
         </div>
-        <div class="flex-[2]">
-          <h2 class="text-4xl font-extrabold mb-6 text-gray-800">{{ feature.title }}</h2>
-          <p class="text-xl text-gray-600 leading-relaxed">{{ feature.description }}</p>
+        <div class="flex-[2] w-full">
+          <h2 class="text-4xl font-extrabold mb-4 md:mb-6 text-gray-800">{{ feature.title }}</h2>
+          <p class="text-base md:text-xl text-gray-600 leading-relaxed">{{ feature.description }}</p>
         </div>
       </div>
     </section>
 
     <!-- Pricing -->
-    <section class="container mx-auto mb-32">
-      <h2 class="text-4xl font-black text-center mb-16 text-gray-800">Simple Pricing</h2>
-      <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <section class="container mx-auto mb-16 md:mb-32 px-4">
+      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800">Simple Pricing</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-0">
         <div class="bg-white p-8 rounded-2xl">
           <h3 class="text-2xl font-bold mb-4">Open Source</h3>
           <div class="text-4xl font-bold text-blue-600 mb-6">Free</div>
-          <ul class="space-y-4">
+          <ul class="space-y-4 text-base md:text-lg">
             <li class="flex items-center gap-3">
               <i class="fas fa-check text-green-500"></i>
               <span>Local storage support</span>
@@ -68,7 +80,7 @@
           <div class="absolute -top-2 -right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">Coming soon</div>
           <h3 class="text-2xl font-bold mb-4">Cloud Storage</h3>
           <div class="text-4xl font-bold mb-6">$9/mo</div>
-          <ul class="space-y-4">
+          <ul class="space-y-4 text-base md:text-lg">
             <li class="flex items-center gap-3">
               <i class="fas fa-check"></i>
               <span>Everything in Free</span>
@@ -87,17 +99,20 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="container mx-auto mb-32">
-      <h2 class="text-4xl font-black text-center mb-16">What Users Say</h2>
-      <div class="grid grid-cols-3 gap-8">
-        <div v-for="testimonial in testimonials" :key="testimonial.author" 
-             class="p-8 rounded-2xl bg-white shadow-sm">
-          <p class="text-lg text-gray-600 mb-6">{{ testimonial.content }}</p>
+    <section class="container mx-auto mb-16 md:mb-32 px-4">
+      <h2 class="text-2xl md:text-4xl font-black text-center mb-8 md:mb-16">What Users Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          v-for="testimonial in testimonials" 
+          :key="testimonial.author" 
+          class="p-8 rounded-2xl bg-white shadow-sm"
+        >
+          <p class="text-base md:text-lg text-gray-600 mb-6">{{ testimonial.content }}</p>
           <div class="flex items-center gap-4">
             <img :src="testimonial.avatar" alt="User avatar" class="w-12 h-12 rounded-full"/>
             <div>
-              <div class="font-bold">{{ testimonial.author }}</div>
-              <div class="text-gray-500">{{ testimonial.role }}</div>
+              <div class="font-bold text-sm md:text-base">{{ testimonial.author }}</div>
+              <div class="text-gray-500 text-sm md:text-base">{{ testimonial.role }}</div>
             </div>
           </div>
         </div>
@@ -105,14 +120,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-16">
+    <footer class="bg-gray-50 py-16 px-4">
       <div class="container mx-auto text-center text-gray-600">
         <div class="flex justify-center gap-8 mb-8">
           <a href="#" class="hover:text-blue-600"><i class="fab fa-github text-2xl"></i></a>
           <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter text-2xl"></i></a>
           <a href="#" class="hover:text-blue-600"><i class="fas fa-envelope text-2xl"></i></a>
         </div>
-        <p>© 2024 Figma Tags. All rights reserved.</p>
+        <p class="text-sm md:text-base">© 2024 Figma Tags. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -166,8 +181,5 @@ const testimonials = ref([
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 </style>
-
