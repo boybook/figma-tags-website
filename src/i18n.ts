@@ -89,13 +89,13 @@ const messages = {
       ]
     },
     pricing: {
-      heading: '完全免费开始',
+      heading: '完全免费使用',
       openSourceTitle: '开源版本',
       openSourceFree: '免费',
       openSourceFeatures: [
-        '本地存储支持',
+        '支持本地存储',
         '基础标签功能',
-        '社区驱动的支持'
+        '基于社区的支持'
       ],
       cloudTitle: '云存储版本',
       cloudPrice: '$9/月',
