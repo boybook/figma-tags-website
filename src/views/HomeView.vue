@@ -1,40 +1,51 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <button 
+      @click="toggleLocale" 
+      class="absolute top-4 right-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-full text-gray-700 dark:text-gray-200 text-sm font-medium shadow-sm transition-colors duration-300 flex items-center gap-2"
+    >
+      <i class="fas fa-globe"></i>
+      {{ currentLocaleName }}
+    </button>
     <!-- Header -->
     <header class="container mx-auto max-w-[1200px] pt-20 pb-16 text-center px-4">
       <div class="flex flex-col items-center justify-center gap-3 mb-4">
-        <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600 dark:text-blue-400">Figma Tags</h1>
+        <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600 dark:text-blue-400">
+          {{ $t('header.title') }}
+        </h1>
         <a 
           href="https://github.com/boybook/figma-tags" 
           target="_blank"
           class="bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer"
         >
-          <i class="fab fa-github"></i> Open Source
+          <i class="fab fa-github"></i> {{ $t('header.openSource') }}
         </a>
       </div>
       <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-        The ultimate tagging system for organizing your Figma Files and Frames across documents
+        {{ $t('header.description') }}
       </p>
       <a 
         href="https://www.figma.com/community/plugin/1097223080479352701/figma-tags"
         target="_blank"
         class="inline-block bg-white hover:bg-gray-100 text-blue-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 font-bold px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl mt-8 transition-colors duration-300"
       >
-        Try it out now
+        {{ $t('header.cta') }}
       </a>
     </header>
 
     <!-- Hero Section -->
     <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 px-4">
-      <img src="@/assets/hero.png" alt="Figma Tags Interface" class="w-full rounded-2xl"/>
+      <img src="@/assets/hero.png" :alt="$t('hero.alt')" class="w-full rounded-2xl"/>
     </section>
 
     <!-- Features -->
     <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 md:px-12 px-4">
       <div class="flex flex-col items-center justify-center mb-4">
-        <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800 dark:text-gray-100">How does it help?</h2>
+        <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800 dark:text-gray-100">
+          {{ $t('features.heading') }}
+        </h2>
         <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 md:mb-16 text-center">
-          It allows you to tag frames & sections with custom tags, and then use these tags to filter and search for frames across documents.
+          {{ $t('features.description') }}
         </p>
       </div>
 
@@ -56,42 +67,30 @@
 
     <!-- Pricing -->
     <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 px-4">
-      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">Free to Use</h2>
+      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">
+        {{ $t('pricing.heading') }}
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-0">
         <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl">
-          <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">Open Source</h3>
-          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">Free</div>
+          <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">
+            {{ $t('pricing.openSourceTitle') }}
+          </h3>
+          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">{{ $t('pricing.openSourceFree') }}</div>
           <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-300">
-            <li class="flex items-center gap-3">
+            <li v-for="(item, i) in tm('pricing.openSourceFeatures')" :key="i" class="flex items-center gap-3">
               <i class="fas fa-check text-green-500"></i>
-              <span>Local storage support</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check text-green-500"></i>
-              <span>Basic tagging features</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check text-green-500"></i>
-              <span>Community support</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
         <div class="bg-blue-600 dark:bg-blue-700 p-8 rounded-2xl text-white relative">
-          <div class="absolute -top-2 -right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">Coming soon</div>
-          <h3 class="text-2xl font-bold mb-4">Cloud Storage</h3>
-          <div class="text-4xl font-bold mb-6">$9/mo</div>
+          <div class="absolute -top-2 -right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">{{ $t('pricing.comingSoon') }}</div>
+          <h3 class="text-2xl font-bold mb-4">{{ $t('pricing.cloudTitle') }}</h3>
+          <div class="text-4xl font-bold mb-6">{{ $t('pricing.cloudPrice') }}</div>
           <ul class="space-y-4 text-base md:text-lg text-white">
-            <li class="flex items-center gap-3">
+            <li v-for="(item, i) in tm('pricing.cloudFeatures')" :key="i" class="flex items-center gap-3">
               <i class="fas fa-check"></i>
-              <span>Everything in Free</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check"></i>
-              <span>Cloud sync across devices</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fas fa-check"></i>
-              <span>Priority support</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
@@ -100,7 +99,9 @@
 
     <!-- Testimonials -->
     <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 md:px-8 px-8 md:px-4">
-      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">What Users Say</h2>
+      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">
+        {{ $t('testimonials.heading') }}
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <div 
           v-for="testimonial in testimonials" 
@@ -127,32 +128,19 @@
           <a href="https://x.com/boybook1112" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
           <a href="mailto:fangyizhou1997@qq.com" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fas fa-envelope text-2xl"></i></a>
         </div>
-        <p class="text-sm md:text-base">Built with ❤️ by boybook for designers</p>
+        <p class="text-sm md:text-base">{{ $t('footer.built') }}</p>
       </div>
     </footer>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n'
 
-const features = ref([
-  {
-    title: 'Frame-Level Management',
-    description: 'Efficiently manage your design at the frame level, making it easy to navigate through large design files with precision and speed.',
-    image: 'images/feature1.png'
-  },
-  {
-    title: 'Cross-Document Organization',
-    description: 'Seamlessly manage frames across multiple documents in a unified view, streamlining your workflow and improving productivity.',
-    image: 'images/feature2.png'
-  },
-  {
-    title: 'Team Collaboration',
-    description: 'Connect with Notion database to enable seamless collaboration between designers and non-designers, making design assets easily accessible.',
-    image: 'images/feature3.png'
-  }
-]);
+const { tm, locale } = useI18n();
+
+const features = computed(() => tm('features.list'))
 
 const testimonials = ref([
   {
@@ -174,6 +162,36 @@ const testimonials = ref([
     avatar: 'https://ai-public.mastergo.com/ai/img_res/e2f2229b2e4ef66d17461bc9e07cf4ac.jpg'
   }
 ]);
+
+// 定义支持的语言配置
+const supportedLocales = {
+  'en': 'English',
+  'zh': '中文',
+  'ja': '日本語',
+  'es': 'Español',
+  'pt': 'Português',
+} as const
+
+// 修改为下拉菜单样式
+const currentLocale = ref(locale.value)
+
+function toggleLocale() {
+  // 获取所有语言的键
+  const locales = Object.keys(supportedLocales)
+  // 找到当前语言的索引
+  const currentIndex = locales.indexOf(currentLocale.value)
+  // 计算下一个语言的索引（循环）
+  const nextIndex = (currentIndex + 1) % locales.length
+  // 设置新的语言
+  currentLocale.value = locales[nextIndex]
+  locale.value = currentLocale.value
+}
+
+// 计算当前语言显示名称
+const currentLocaleName = computed(() => {
+  return supportedLocales[currentLocale.value as keyof typeof supportedLocales]
+})
+
 </script>
 
 <style>
