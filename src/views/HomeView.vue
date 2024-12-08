@@ -17,7 +17,7 @@
 
     <!-- Hero Section -->
     <section class="container mx-auto mb-32">
-      <img :src="heroImage" alt="Figma Tags Interface" class="w-full rounded-2xl"/>
+      <img src="@/assets/hero.png" alt="Figma Tags Interface" class="w-full rounded-2xl"/>
     </section>
 
     <!-- Features -->
@@ -120,8 +120,6 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-
-const heroImage = '/src/assets/hero.png';
 
 const features = ref([
   {
