@@ -129,6 +129,9 @@
           <a href="mailto:fangyizhou1997@qq.com" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fas fa-envelope text-2xl"></i></a>
         </div>
         <p class="text-sm md:text-base">{{ $t('footer.built') }}</p>
+        <p v-if="locale=='zh'" class="mt-2 opacity-60">
+          <a href="https://beian.miit.gov.cn/" target="_blank" class="beian-link hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">浙ICP备2021037852号</a>
+        </p>
       </div>
     </footer>
   </div>
