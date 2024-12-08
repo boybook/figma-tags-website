@@ -1,24 +1,24 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-white to-blue-50">
+  <div class="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
     <!-- Header -->
     <header class="container mx-auto pt-20 pb-16 text-center px-4">
       <div class="flex flex-col items-center justify-center gap-3 mb-4">
-        <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600">Figma Tags</h1>
+        <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600 dark:text-blue-400">Figma Tags</h1>
         <a 
           href="https://github.com/boybook/figma-tags" 
           target="_blank"
-          class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer"
+          class="bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer"
         >
           <i class="fab fa-github"></i> Open Source
         </a>
       </div>
-      <p class="text-base md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+      <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
         The ultimate tagging system for organizing your Figma Files and Frames across documents
       </p>
       <a 
         href="https://www.figma.com/community/plugin/1097223080479352701/figma-tags"
         target="_blank"
-        class="inline-block bg-white hover:bg-gray-100 text-blue-600 border-2 border-blue-600 font-bold px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl mt-8 transition-colors duration-300"
+        class="inline-block bg-white hover:bg-gray-100 text-blue-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 font-bold px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl mt-8 transition-colors duration-300"
       >
         Try it out now
       </a>
@@ -32,9 +32,9 @@
     <!-- Features -->
     <section class="container mx-auto mb-16 md:mb-32 px-4">
       <div class="flex flex-col items-center justify-center mb-4">
-        <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800">How does it help?</h2>
-        <p class="text-base md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 md:mb-16 text-center">
-          It allows you to tag frames with custom tags, and then use these tags to filter and search for frames across documents.
+        <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800 dark:text-gray-100">How does it help?</h2>
+        <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 md:mb-16 text-center">
+          It allows you to tag frames & sections with custom tags, and then use these tags to filter and search for frames across documents.
         </p>
       </div>
 
@@ -48,20 +48,20 @@
           <img :src="feature.image" :alt="feature.title" class="rounded-2xl w-full"/>
         </div>
         <div class="flex-[2] w-full">
-          <h2 class="text-4xl font-extrabold mb-4 md:mb-6 text-gray-800">{{ feature.title }}</h2>
-          <p class="text-base md:text-xl text-gray-600 leading-relaxed">{{ feature.description }}</p>
+          <h2 class="text-4xl font-extrabold mb-4 md:mb-6 text-gray-800 dark:text-gray-100">{{ feature.title }}</h2>
+          <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">{{ feature.description }}</p>
         </div>
       </div>
     </section>
 
     <!-- Pricing -->
     <section class="container mx-auto mb-16 md:mb-32 px-4">
-      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800">Simple Pricing</h2>
+      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">Free to Use</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-0">
-        <div class="bg-white p-8 rounded-2xl">
-          <h3 class="text-2xl font-bold mb-4">Open Source</h3>
-          <div class="text-4xl font-bold text-blue-600 mb-6">Free</div>
-          <ul class="space-y-4 text-base md:text-lg">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl">
+          <h3 class="text-2xl font-bold mb-4 dark:text-gray-100">Open Source</h3>
+          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">Free</div>
+          <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-300">
             <li class="flex items-center gap-3">
               <i class="fas fa-check text-green-500"></i>
               <span>Local storage support</span>
@@ -76,11 +76,11 @@
             </li>
           </ul>
         </div>
-        <div class="bg-blue-600 p-8 rounded-2xl text-white relative">
+        <div class="bg-blue-600 dark:bg-blue-700 p-8 rounded-2xl text-white relative">
           <div class="absolute -top-2 -right-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">Coming soon</div>
           <h3 class="text-2xl font-bold mb-4">Cloud Storage</h3>
           <div class="text-4xl font-bold mb-6">$9/mo</div>
-          <ul class="space-y-4 text-base md:text-lg">
+          <ul class="space-y-4 text-base md:text-lg text-white">
             <li class="flex items-center gap-3">
               <i class="fas fa-check"></i>
               <span>Everything in Free</span>
@@ -99,20 +99,20 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="container mx-auto mb-16 md:mb-32 px-4">
-      <h2 class="text-2xl md:text-4xl font-black text-center mb-8 md:mb-16">What Users Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section class="container mx-auto mb-16 md:mb-32 px-8 md:px-4">
+      <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">What Users Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <div 
           v-for="testimonial in testimonials" 
           :key="testimonial.author" 
-          class="p-8 rounded-2xl bg-white shadow-sm"
+          class="p-8 rounded-2xl bg-white dark:bg-gray-800"
         >
-          <p class="text-base md:text-lg text-gray-600 mb-6">{{ testimonial.content }}</p>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6">{{ testimonial.content }}</p>
           <div class="flex items-center gap-4">
             <img :src="testimonial.avatar" alt="User avatar" class="w-12 h-12 rounded-full"/>
             <div>
-              <div class="font-bold text-sm md:text-base">{{ testimonial.author }}</div>
-              <div class="text-gray-500 text-sm md:text-base">{{ testimonial.role }}</div>
+              <div class="font-bold text-sm md:text-base dark:text-gray-100">{{ testimonial.author }}</div>
+              <div class="text-gray-500 dark:text-gray-400 text-sm md:text-base">{{ testimonial.role }}</div>
             </div>
           </div>
         </div>
@@ -120,14 +120,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-16 px-4">
-      <div class="container mx-auto text-center text-gray-600">
+    <footer class="bg-gray-50 dark:bg-gray-900 py-16 px-4">
+      <div class="container mx-auto text-center text-gray-600 dark:text-gray-300">
         <div class="flex justify-center gap-8 mb-8">
-          <a href="#" class="hover:text-blue-600"><i class="fab fa-github text-2xl"></i></a>
-          <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter text-2xl"></i></a>
-          <a href="#" class="hover:text-blue-600"><i class="fas fa-envelope text-2xl"></i></a>
+          <a href="https://github.com/boybook/figma-tags" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-github text-2xl"></i></a>
+          <a href="https://x.com/boybook1112" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
+          <a href="mailto:fangyizhou1997@qq.com" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fas fa-envelope text-2xl"></i></a>
         </div>
-        <p class="text-sm md:text-base">© 2024 Figma Tags. All rights reserved.</p>
+        <p class="text-sm md:text-base">Built with ❤️ by boybook for designers</p>
       </div>
     </footer>
   </div>
@@ -140,17 +140,17 @@ const features = ref([
   {
     title: 'Frame-Level Management',
     description: 'Efficiently manage your design at the frame level, making it easy to navigate through large design files with precision and speed.',
-    image: 'https://ai-public.mastergo.com/ai/img_res/3be226f4e8e328a0773ee7c7d7e383d7.jpg'
+    image: 'images/feature1.png'
   },
   {
     title: 'Cross-Document Organization',
     description: 'Seamlessly manage frames across multiple documents in a unified view, streamlining your workflow and improving productivity.',
-    image: 'https://ai-public.mastergo.com/ai/img_res/a6c463c94be663a7f2983d2d2179cab5.jpg'
+    image: 'images/feature2.png'
   },
   {
     title: 'Team Collaboration',
     description: 'Connect with Notion database to enable seamless collaboration between designers and non-designers, making design assets easily accessible.',
-    image: 'https://ai-public.mastergo.com/ai/img_res/8deebe546dd83e3b44533a0af9d8b161.jpg'
+    image: 'images/feature3.png'
   }
 ]);
 
