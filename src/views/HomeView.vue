@@ -4,7 +4,7 @@
       @click="toggleLocale" 
       class="absolute top-4 right-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 rounded-full text-gray-700 dark:text-gray-200 text-sm font-medium shadow-sm transition-colors duration-300 flex items-center gap-2"
     >
-      <i class="fas fa-globe"></i>
+      <font-awesome-icon icon="globe" />
       {{ currentLocaleName }}
     </button>
     <!-- Header -->
@@ -18,7 +18,7 @@
           target="_blank"
           class="bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 px-3 py-1 rounded-full text-sm flex items-center gap-2 transition-colors duration-300 cursor-pointer"
         >
-          <i class="fab fa-github"></i> {{ $t('header.openSource') }}
+          <font-awesome-icon :icon="['fab', 'github']" /> {{ $t('header.openSource') }}
         </a>
       </div>
       <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
@@ -78,7 +78,7 @@
           <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-6">{{ $t('pricing.openSourceFree') }}</div>
           <ul class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-300">
             <li v-for="(item, i) in tm('pricing.openSourceFeatures')" :key="i" class="flex items-center gap-3">
-              <i class="fas fa-check text-green-500"></i>
+              <font-awesome-icon icon="check" class="text-green-500" />
               <span>{{ item }}</span>
             </li>
           </ul>
@@ -89,7 +89,7 @@
           <div class="text-4xl font-bold mb-6">{{ $t('pricing.cloudPrice') }}</div>
           <ul class="space-y-4 text-base md:text-lg text-white">
             <li v-for="(item, i) in tm('pricing.cloudFeatures')" :key="i" class="flex items-center gap-3">
-              <i class="fas fa-check"></i>
+              <font-awesome-icon icon="check" />
               <span>{{ item }}</span>
             </li>
           </ul>
@@ -124,9 +124,15 @@
     <footer class="bg-gray-50 dark:bg-gray-900 py-16 px-4">
       <div class="container mx-auto max-w-[1200px] text-center text-gray-600 dark:text-gray-300">
         <div class="flex justify-center gap-8 mb-8">
-          <a href="https://github.com/boybook/figma-tags" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-github text-2xl"></i></a>
-          <a href="https://x.com/boybook1112" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
-          <a href="mailto:fangyizhou1997@qq.com" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fas fa-envelope text-2xl"></i></a>
+          <a href="https://github.com/boybook/figma-tags" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+            <font-awesome-icon :icon="['fab', 'github']" class="text-2xl" />
+          </a>
+          <a href="https://x.com/boybook1112" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+            <font-awesome-icon :icon="['fab', 'twitter']" class="text-2xl" />
+          </a>
+          <a href="mailto:fangyizhou1997@qq.com" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400">
+            <font-awesome-icon icon="envelope" class="text-2xl" />
+          </a>
         </div>
         <p class="text-sm md:text-base">{{ $t('footer.built') }}</p>
         <p v-if="locale=='zh'" class="mt-2 opacity-60">
