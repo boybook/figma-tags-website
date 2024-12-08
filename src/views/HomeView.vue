@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
     <!-- Header -->
-    <header class="container mx-auto pt-20 pb-16 text-center px-4">
+    <header class="container mx-auto max-w-[1200px] pt-20 pb-16 text-center px-4">
       <div class="flex flex-col items-center justify-center gap-3 mb-4">
         <h1 class="font-extrabold text-7xl md:text-8xl text-blue-600 dark:text-blue-400">Figma Tags</h1>
         <a 
@@ -25,12 +25,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="container mx-auto mb-16 md:mb-32 px-4">
+    <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 px-4">
       <img src="@/assets/hero.png" alt="Figma Tags Interface" class="w-full rounded-2xl"/>
     </section>
 
     <!-- Features -->
-    <section class="container mx-auto mb-16 md:mb-32 px-4">
+    <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 md:px-12 px-4">
       <div class="flex flex-col items-center justify-center mb-4">
         <h2 class="text-5xl md:text-6xl font-black text-center mb-8 text-gray-800 dark:text-gray-100">How does it help?</h2>
         <p class="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 md:mb-16 text-center">
@@ -55,7 +55,7 @@
     </section>
 
     <!-- Pricing -->
-    <section class="container mx-auto mb-16 md:mb-32 px-4">
+    <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 px-4">
       <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">Free to Use</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 md:px-0">
         <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl">
@@ -99,7 +99,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="container mx-auto mb-16 md:mb-32 px-8 md:px-4">
+    <section class="container mx-auto max-w-[1200px] mb-16 md:mb-32 md:px-8 px-8 md:px-4">
       <h2 class="text-4xl font-black text-center mb-8 md:mb-16 text-gray-800 dark:text-gray-100">What Users Say</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <div 
@@ -121,7 +121,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-50 dark:bg-gray-900 py-16 px-4">
-      <div class="container mx-auto text-center text-gray-600 dark:text-gray-300">
+      <div class="container mx-auto max-w-[1200px] text-center text-gray-600 dark:text-gray-300">
         <div class="flex justify-center gap-8 mb-8">
           <a href="https://github.com/boybook/figma-tags" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-github text-2xl"></i></a>
           <a href="https://x.com/boybook1112" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
