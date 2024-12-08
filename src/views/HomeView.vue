@@ -53,7 +53,7 @@
         v-for="(feature, index) in features" 
         :key="index" 
         class="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-16 md:mb-24 px-4 md:px-0"
-        :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
+        :class="(Number(index)) % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
       >
         <div class="flex-[4] w-full">
           <img :src="feature.image" :alt="feature.title" class="rounded-2xl w-full"/>
@@ -135,12 +135,18 @@
 </template>
 
 <script lang="ts" setup>
+interface Feature {
+  title: string;
+  description: string;
+  image: string;
+}
+
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n'
 
 const { tm, locale } = useI18n();
 
-const features = computed(() => tm('features.list'))
+const features = computed<Feature[]>(() => tm('features.list'))
 
 const testimonials = ref([
   {
